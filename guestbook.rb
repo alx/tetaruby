@@ -32,6 +32,10 @@ get '/clean' do
   erb :index
 end
 
+get '/keepalive' do
+  # Just keep the app alive and do nothing
+end
+
 post '/' do
   # Create a new shout and redirect back to the list.
   shout = Shout.create(:message => params[:message])
