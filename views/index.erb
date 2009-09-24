@@ -5,17 +5,23 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>TetaRuby</title>
-	<link rel="stylesheet" href="/css/master.css" type="text/css"/>
+	<link rel="stylesheet" href="/css/blueprint/print.css" type="text/css" media="print" />
+	<!--[if IE]><link rel="stylesheet" href="/css/blueprint/ie.css" type="text/css" media="screen, projection" /><![endif]-->
+	<link rel="stylesheet" href="/css/master.css" type="text/css" media="print" />
 	
 	<script type="text/javascript" src="/js/jquery.js"></script>
 	<script type="text/javascript" src="/js/master.js"></script>
 </head>
 <body>
-	<h1>Pixel Wall</h1>
+	<h1>Desirs D'ASCII'</h1>
+	
+	<% @shouts.each do |shout| %>
+	<p>Someone wrote, <q><%=h shout.message %></q></p>
+	<% end %>
 
-	<div id="pixel_wall"><% 50.times do |row_num| %><div class="row"><% 50.times do |column_num| pixel_id = (row_num * 50) + column_num %><div id="pixel-<%= pixel_id %>" class="pixel pixel_<%= @pixels[pixel_id].status %>"></div><% end %></div><% end %></div>
-	
-	<p><a href="http://github.com/alx/tetaruby">Source</a></p>
-	
+	<form method=post>
+	<textarea name="message"></textarea>
+	<input type='submit' value='Shout'>
+	</form>
 </body>
 </html>
