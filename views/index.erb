@@ -1,0 +1,13 @@
+<h1>D&eacute;sirs d'ASCII</h1>
+
+<a href="/clean">C'est le bordel, clique ici pour nettoyer</a><br>
+<a href="http://github.com/alx/tetaruby">Code source</a>
+
+<% @shouts.each do |shout| %>
+<p>Someone wrote, <q><%=h shout.message %></q></p>
+<% end %>
+
+<form method='post'>
+<textarea name="message"></textarea>
+<input type='submit' value='Shout'>
+</form>

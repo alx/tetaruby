@@ -1,0 +1,3 @@
+WEB-INF/lib/*
+WEB-INF/appengine-generated/*
+.gems
