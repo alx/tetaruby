@@ -1,6 +1,6 @@
 require 'appengine-rack'
 AppEngine::Rack.configure_app(
   :application => 'tetaruby',
-  :version => 2)
-require 'pixels'
+  :version => 1)
+require 'guestbook'
 run Sinatra::Application

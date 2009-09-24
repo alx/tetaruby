@@ -3,7 +3,8 @@ require 'sinatra'
 require 'dm-core'
 
 # Configure DataMapper to use the App Engine datastore 
-DataMapper.setup(:default, "appengine://auto")
+#DataMapper.setup(:default, "appengine://auto")
+DataMapper.setup(:default, "sqlite3:///#{Dir.pwd}/test.db")
 
 # Create your model class
 class Pixel
@@ -12,6 +13,8 @@ class Pixel
   property :id, Integer, :key => true
   property :status, Text
 end
+
+DataMapper.auto_migrate!
 
 # Initialize pixel array if none exists
 if Pixel.first.nil?
